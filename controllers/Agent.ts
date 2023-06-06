@@ -8,7 +8,7 @@ export const allAgents: RouteCallback = (req, res) => {
 
 export const singleAgent: RouteCallback = (req, res) => {
     const id: string = req.params.id
-    const singleAgent = Agents.filter((agent: DataAgent) => {
+    const singleAgent: DataAgent[] = Agents.filter((agent: DataAgent) => {
         return Number(id) == agent.id
     })
 
