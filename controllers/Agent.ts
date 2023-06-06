@@ -13,9 +13,9 @@ export const allAgents: RouteCallback = (req, res) => {
 }
 
 export const singleAgent: RouteCallback = (req, res) => {
-    const id: string = req.params.id
+    const id: number = Number(req.params.id)
     const singleAgent: DataAgent[] = Agents.filter((agent: DataAgent) => {
-        return Number(id) == agent.id
+        return id == agent.id
     })
 
     const response: ResponseAgent = {
