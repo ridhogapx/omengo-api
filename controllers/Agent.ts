@@ -1,9 +1,15 @@
 import RouteCallback from "../types/RouteCallback";
-import { DataAgent } from "../interfaces/ResponseAPI";
+import { DataAgent, ResponseAgent } from "../interfaces/ResponseAPI";
 import Agents from "../src/Agent";
 
 export const allAgents: RouteCallback = (req, res) => {
-    return res.json(Agents)
+    const response: ResponseAgent = {
+        message: "Successfully fetching data all agents!",
+        success: true,
+        status: 200,
+        data: Agents
+    }
+    return res.json(response)
 }
 
 export const singleAgent: RouteCallback = (req, res) => {
@@ -12,5 +18,12 @@ export const singleAgent: RouteCallback = (req, res) => {
         return Number(id) == agent.id
     })
 
-    return res.json(singleAgent)
+    const response: ResponseAgent = {
+        message: `Getting data by id ${id} is success!`,
+        success: true,
+        status: 200,
+        data: singleAgent
+    }
+
+    return res.json(response)
 }
