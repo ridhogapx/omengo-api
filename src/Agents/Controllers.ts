@@ -1,4 +1,4 @@
-import { DataAgent } from "../interfaces/ResponseAPI"
+import { DataAgent } from "../../interfaces/ResponseAPI"
 
 const Agents: DataAgent[] = [
     {
