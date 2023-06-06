@@ -6,7 +6,7 @@ const app: Express = express()
 const port: number = 4000
 
 app.get("/api/v1/agent", allAgents)
-app.get("/api/v1/agent/:query", singleAgent)
+app.get("/api/v1/agent/:id", singleAgent)
 
 app.listen(port, (): void => {
     console.log(`Server is running on port ${port}`)

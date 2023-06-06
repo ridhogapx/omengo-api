@@ -1,18 +1,16 @@
-import RouteCallback from "../types/RouteCallback"
-import Agents from "../src/Agents/Controllers"
-import { DataAgent } from "../interfaces/ResponseAPI"
+import RouteCallback from "../types/RouteCallback";
+import { DataAgent } from "../interfaces/ResponseAPI";
+import Agents from "../src/Agent";
 
 export const allAgents: RouteCallback = (req, res) => {
-    return res.json(Agents)    
+    return res.json(Agents)
 }
 
 export const singleAgent: RouteCallback = (req, res) => {
-    const query: string = req.params.query
-
-    const singleAgent: DataAgent[] = Agents.filter((agent: DataAgent) => {
-            return Number(query) == agent.id
+    const id: string = req.params.id
+    const singleAgent = Agents.filter((agent: DataAgent) => {
+        return Number(id) == agent.id
     })
 
     return res.json(singleAgent)
-
 }
