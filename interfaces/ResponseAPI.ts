@@ -1,12 +1,12 @@
-interface Data {
+interface DataAgent {
     name: string,
+    category: string,
     image_url: string
 }
 
-interface ResponseAPI {
+export interface ResponseAgent {
     message: string,
     success: boolean,
-    data: Data[]
+    data: DataAgent[]
 }
 
-export default ResponseAPI
