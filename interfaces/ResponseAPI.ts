@@ -1,19 +1,23 @@
-export interface DataAgent {
-    id: number,
-    name: string,
-    category: string,
-    image_url: string
-}
-
-export interface DataMap {
-    id: number,
-    title: string,
-    image_url: string
-}
-
-export interface ResponseAgent {
+interface BaseResponse {
     message: string,
     success: boolean,
-    data: DataAgent[]
+    status: number
+}
+
+interface DataValo {
+    id: number,
+    name: string,
+    image_url: string
+}
+
+export interface DataAgent extends DataValo {
+    category: string,
+    
+}
+
+export interface DataMap extends DataValo {}
+
+export interface ResponseAgent extends BaseResponse{
+   data: DataAgent[]
 }
 
