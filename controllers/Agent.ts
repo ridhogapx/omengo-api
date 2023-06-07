@@ -7,12 +7,14 @@ import Success from "../types/Success";
 const successResponse: Success = new Success()
 
 export const allAgents: RouteCallback = (req, res) => {
-    const response: CategoryResponse  = successResponse.AllCategory("Agent" ,Agents )
+    successResponse.allMsg = "Agent"
+    const response: CategoryResponse  = successResponse.AllCategory(Agents )
     return res.json(response)
 }
 
 export const singleAgent: RouteCallback = (req, res) => {
     const id: number = Number(req.params.id)
+    successResponse.singleMsg = id
     const singleAgent: DataCategory[] = Agents.filter((agent: DataCategory) => {
         return id == agent.id
     })
