@@ -1,6 +1,6 @@
-import { DataAgent } from "../interfaces/ResponseAPI"
+import { DataCategory } from "../interfaces/ResponseAPI"
 
-const Agents: DataAgent[] = [
+const Agents: DataCategory[] = [
     {
         id: 1,
         name: "Astra",

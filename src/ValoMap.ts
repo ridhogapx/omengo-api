@@ -1,6 +1,6 @@
-import { DataMap } from "../interfaces/ResponseAPI"
+import { DataValo } from "../interfaces/ResponseAPI"
 
-const ValoMap: DataMap[] = [
+const ValoMap: DataValo[] = [
     {
         id: 1,
         name: "Ascent",

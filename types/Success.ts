@@ -1,32 +1,58 @@
-import { DataAgent, DataMap } from "../interfaces/ResponseAPI"
+import { DataValo, DataCategory } from "../interfaces/ResponseAPI"
 
 class Success {
-    message: string
-    success: boolean
-    status: number
+    public _messageForSingle: string
+    public _messageForAll: string
+    public success: boolean
+    public status: number
 
     constructor() {
-        this.message = ''
+        this._messageForSingle = ""
+        this._messageForAll = ""
         this.success = true
         this.status = 200
     }
 
-    Agent(id: number, data: DataAgent[] ) {
-        this.message = `Getting data by id ${id} is success!`
+    public set singleMsg(id: number) {
+        this._messageForSingle = `Getting data by id ${id} is success!`
+    }
 
+    public set allMsg(name: string) {
+        this._messageForAll = `Successfully fetching all ${name}`
+    }
+
+
+    public SingleCategory(id: number, data: DataCategory[]) {
         return {
-            message: this.message,
+            message: this._messageForSingle,
             success: this.success,
             status: this.status,
             data: data
         }
     }
 
-    Agents(data: DataAgent[]) {
-        this.message = `Successfully fetching all Agents`
+    AllCategory(data: DataCategory[]) {
+        return {
+            message: this._messageForAll,
+            success: this.success,
+            status: this.status,
+            data: data
+        }
+    }
+
+    SingleValo(id: number, data: DataValo[]) {
 
         return {
-            message: this.message,
+            message: this._messageForSingle,
+            success: this.success,
+            status: this.status,
+            data: data
+        }
+    }
+
+    allValo(name: string, data: DataValo[]) {
+        return {
+            message: this._messageForAll,
             success: this.success,
             status: this.status,
             data: data
