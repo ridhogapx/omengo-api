@@ -7,7 +7,7 @@ import Success from "../types/Success";
 const successResponse: Success = new Success()
 
 export const allAgents: RouteCallback = (req, res) => {
-    const response: ResponseAgent = successResponse.all("Agents", Agents)
+    const response: ResponseAgent = successResponse.Agents(Agents)
     return res.json(response)
 }
 
@@ -20,7 +20,7 @@ export const singleAgent: RouteCallback = (req, res) => {
     const failureResponse: Failure = new Failure()
 
     if(singleAgent.length) {
-        const response: ResponseAgent = successResponse.single(id, singleAgent)
+        const response: ResponseAgent = successResponse.Agent(id, singleAgent)
     
         return res.json(response)
     }

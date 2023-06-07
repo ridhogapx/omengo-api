@@ -1,9 +1,9 @@
-import { DataAgent } from "../interfaces/ResponseAPI"
+import { DataAgent, DataMap } from "../interfaces/ResponseAPI"
 
 class Success {
     message: string
     success: boolean
-    status: number  
+    status: number
 
     constructor() {
         this.message = ''
@@ -11,7 +11,7 @@ class Success {
         this.status = 200
     }
 
-    single(id: number, data: DataAgent[]) {
+    Agent(id: number, data: DataAgent[] ) {
         this.message = `Getting data by id ${id} is success!`
 
         return {
@@ -22,8 +22,8 @@ class Success {
         }
     }
 
-    all(name: string, data: DataAgent[]) {
-        this.message = `Successfully fetching all ${name}`
+    Agents(data: DataAgent[]) {
+        this.message = `Successfully fetching all Agents`
 
         return {
             message: this.message,
