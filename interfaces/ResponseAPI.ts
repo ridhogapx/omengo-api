@@ -24,3 +24,5 @@ export interface ResponseAgent extends BaseResponse{
 export interface ResponseMap extends BaseResponse {
     data: DataMap[]
 }
+
+export interface failureResponse extends BaseResponse {}
