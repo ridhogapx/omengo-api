@@ -1,7 +1,7 @@
 class Failure {
-    message: string
-    status: number
-    success: boolean
+    public message: string
+    public status: number
+    public success: boolean
 
     constructor() {
         this.message = "Data is not found"
@@ -9,7 +9,7 @@ class Failure {
         this.success = false
     }
 
-    response() {
+    public response() {
         return {
             message: this.message,
             success: this.success,
