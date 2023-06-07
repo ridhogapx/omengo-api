@@ -19,6 +19,16 @@ class Success {
         }
     }
 
+    all(data: string) {
+        this.message = `Successfully fetching all ${data}`
+
+        return {
+            message: this.message,
+            success: this.success,
+            status: this.status
+        }
+    }
+
 }
 
 export default Success
