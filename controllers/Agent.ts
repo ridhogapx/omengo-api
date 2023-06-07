@@ -2,14 +2,12 @@ import RouteCallback from "../types/RouteCallback";
 import { DataAgent, ResponseAgent, FailureResponse } from "../interfaces/ResponseAPI";
 import Agents from "../src/Agent";
 import Failure from "../types/Failure";
+import Success from "../types/Success";
+
+const successResponse: Success = new Success()
 
 export const allAgents: RouteCallback = (req, res) => {
-    const response: ResponseAgent = {
-        message: "Successfully fetching data all agents!",
-        success: true,
-        status: 200,
-        data: Agents
-    }
+    const response: ResponseAgent = successResponse.all("Agents", Agents)
     return res.json(response)
 }
 
@@ -22,12 +20,7 @@ export const singleAgent: RouteCallback = (req, res) => {
     const failureResponse: Failure = new Failure()
 
     if(singleAgent.length) {
-        const response: ResponseAgent = {
-            message: `Getting data by id ${id} is success!`,
-            success: true,
-            status: 200,
-            data: singleAgent
-        }
+        const response: ResponseAgent = successResponse.single(id, singleAgent)
     
         return res.json(response)
     }
