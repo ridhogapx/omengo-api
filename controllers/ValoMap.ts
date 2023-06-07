@@ -1,6 +1,7 @@
 import ValoMap from "../src/ValoMap"
 import RouteCallback from "../types/RouteCallback"
-import { ResponseMap, DataMap } from "../interfaces/ResponseAPI"
+import { ResponseMap, DataMap, FailureResponse } from "../interfaces/ResponseAPI"
+import Failure from "../types/Failure"
 
 export const allMap: RouteCallback = (req, res) => {
    const response: ResponseMap = {
@@ -19,12 +20,21 @@ export const singleMap: RouteCallback = (req, res) => {
         return id == result.id
     })
 
-    const response: ResponseMap = {
-        message: `Getting map id ${id} is success!`,
-        success: true,
-        status: 200,
-        data: single
+    const failure: Failure = new Failure()
+
+    if(single.length) {
+        const response: ResponseMap = {
+            message: `Getting map id ${id} is success!`,
+            success: true,
+            status: 200,
+            data: single
+        }
+    
+        return res.json(response)
     }
 
+    const response: FailureResponse = failure.response()
     return res.json(response)
+
+    
 }
