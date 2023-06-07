@@ -22,7 +22,7 @@ class Success {
     }
 
 
-    public SingleCategory(id: number, data: DataCategory[]) {
+    public SingleCategory(data: DataCategory[]) {
         return {
             message: this._messageForSingle,
             success: this.success,
@@ -40,7 +40,7 @@ class Success {
         }
     }
 
-    SingleValo(id: number, data: DataValo[]) {
+    SingleValo(data: DataValo[]) {
 
         return {
             message: this._messageForSingle,
@@ -50,7 +50,7 @@ class Success {
         }
     }
 
-    allValo(name: string, data: DataValo[]) {
+    allValo( data: DataValo[]) {
         return {
             message: this._messageForAll,
             success: this.success,

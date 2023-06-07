@@ -22,7 +22,7 @@ export const singleAgent: RouteCallback = (req, res) => {
     const failureResponse: Failure = new Failure()
 
     if(singleAgent.length) {
-        const response: CategoryResponse = successResponse.SingleCategory(id, singleAgent)
+        const response: CategoryResponse = successResponse.SingleCategory(singleAgent)
     
         return res.json(response)
     }
