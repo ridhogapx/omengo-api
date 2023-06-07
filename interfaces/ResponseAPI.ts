@@ -25,4 +25,4 @@ export interface ResponseMap extends BaseResponse {
     data: DataMap[]
 }
 
-export interface failureResponse extends BaseResponse {}
+export interface FailureResponse extends BaseResponse {}
